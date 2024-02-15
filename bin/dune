@@ -1,0 +1,4 @@
+(executable
+ (public_name wc)
+ (name main)
+ (libraries wc))
