@@ -5,11 +5,11 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github sravan-s/wc))
 
-(authors "Author Name")
+(authors "Sravan")
 
-(maintainers "Maintainer Name")
+(maintainers "sravan-s@protonmail.com")
 
 (license LICENSE)
 
@@ -17,10 +17,10 @@
 
 (package
  (name wc)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml dune)
+ (synopsis "wc clone in OCaml")
+ (description "See README.md for more information.")
+ (depends ocaml dune (ppx_deriving(= "5.2.1")))
  (tags
-  (topics "to describe" your project)))
+  (topics "ocaml" your project)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
