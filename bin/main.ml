@@ -1,3 +1,5 @@
+open Operations
+
 let version = "0.0.0"
 let help = "
   Usage: wc --help | --version | [OPTION]... FILE
@@ -9,19 +11,6 @@ let help = "
     --help                display this help and exit
     --version             output version information and exit
 "
-
-type file_operation = {
-  mutable byte_count: bool;
-  mutable newline_count: bool;
-  mutable word_count: bool;
-  mutable character_count: bool;
-  mutable file: string;
-} [@@deriving show]
-
-type operation =
-  | Help
-  | Version
-  | File_Operation of file_operation
 
 let rec parse_args args =
   let op = { byte_count = false; newline_count = false; word_count = false; character_count = false; file = "" } in
@@ -46,6 +35,7 @@ let _ = Sys.argv
     | Ok(File_Operation op) -> print_endline (show_file_operation op)
     | Error e -> print_endline e
 
+let () = File_utils.hello ()
 
 (* Util to print arguments *)
 (* let print_argv () =
